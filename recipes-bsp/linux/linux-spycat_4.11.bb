@@ -43,6 +43,7 @@ do_rm_work() {
 
 SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v4.x/linux-${PV}.tar.xz;name=kernel \
 	https://github.com/open-spycat/spycat-kernel/releases/download/v${PV}/spycat-kernel-${PV}.patch.xz;apply=yes;name=kernelpatch \
+	file://make-yyloc-declaration-extern.patch \
 	file://defconfig \
 	"
 
