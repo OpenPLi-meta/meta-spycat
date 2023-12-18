@@ -26,7 +26,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
 MACHINE_EXTRA_RRECOMMENDS += "gst-plugin-dvbmediasink"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 \
-	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
 	"
 
 MACHINE_FEATURES += " alsa wlan 3dtv switchoff osdposition hdmicec"
