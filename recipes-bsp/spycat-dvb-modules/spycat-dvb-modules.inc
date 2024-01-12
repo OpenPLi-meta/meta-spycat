@@ -6,7 +6,7 @@ LICENSE = "CLOSED"
 PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
-RDEPENDS_${PN} += "spycat-firmware-mn8847x"
+RDEPENDS:${PN} += "spycat-firmware-mn8847x"
 
 SRC_URI = "https://github.com/open-spycat/spycat-driver/releases/download/${SRCDATE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
@@ -16,7 +16,7 @@ INHIBIT_PACKAGE_STRIP = "1"
 
 inherit module
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf"
+FILES:${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf"
 
 do_compile() {
 }

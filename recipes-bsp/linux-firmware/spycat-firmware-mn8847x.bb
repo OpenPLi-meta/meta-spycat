@@ -8,7 +8,7 @@ SRC_URI = "file://mn8847x.zip"
 S = "${WORKDIR}"
 
 PACKAGES = "${PN}"
-FILES_${PN} += "${base_libdir}/firmware"
+FILES:${PN} += "${base_libdir}/firmware"
 
 do_install() {
 	install -d ${D}${base_libdir}/firmware
