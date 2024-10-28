@@ -8,7 +8,7 @@ PR = "r0"
 
 RDEPENDS:${PN} += "spycat-firmware-mn8847x"
 
-SRC_URI = "https://github.com/open-spycat/spycat-driver/releases/download/${SRCDATE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
+SRC_URI = "http://downloads.openpli.org/archive/spycat/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
