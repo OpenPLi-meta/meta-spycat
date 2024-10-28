@@ -6,7 +6,7 @@ require conf/license/license-gplv2.inc
 
 PR = "r0"
 
-SRC_URI = "https://github.com/anthonywong/rtl8723bs/archive/v${PV}.tar.gz \
+SRC_URI = "http://downloads.openpli.org/archive/spycat/v${PV}.tar.gz \
 	file://rtl8723bs-makefile.patch \
 	file://rtl8723bs-remove-debug.patch \
 	file://rtl8723bs-gcc5.patch \
