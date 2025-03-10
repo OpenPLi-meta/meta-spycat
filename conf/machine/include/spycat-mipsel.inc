@@ -15,6 +15,8 @@ MKUBIFS_ARGS = "-m 2048 -e 126976 -c 4096 -F"
 UBINIZE_ARGS = "-m 2048 -p 128KiB"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-spycat"
+PREFERRED_PROVIDER_virtual/blindscan-dvbs = "os-blindscan-utils"
+PREFERRED_PROVIDER_virtual/blindscan-dvbc = "os-blindscan-utils"
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
