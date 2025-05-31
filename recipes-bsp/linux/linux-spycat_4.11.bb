@@ -21,9 +21,11 @@ B = "${WORKDIR}/build"
 
 KERNEL_IMAGEDEST = "tmp"
 
-KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS+=-Wno-attribute-alias EXTRA_CFLAGS+=-Wno-array-compare EXTRA_CFLAGS+=-Wno-array-bounds"
+KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
 FILES:${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
+
+RPROVIDES:kernel-image = "kernel-image-${KERNEL_VERSION} kernel-${KERNEL_IMAGETYPE}"
 
 pkg_postinst:kernel-image () {
 	if [ -z "$D" ]
@@ -45,6 +47,9 @@ SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v4.x/linux-${PV}.tar.xz;name=kernel 
 	https://github.com/open-spycat/spycat-kernel/releases/download/v${PV}/spycat-kernel-${PV}.patch.xz;apply=yes;name=kernelpatch \
 	file://make-yyloc-declaration-extern.patch \
 	file://defconfig \
+	file://fix-never-be-null_outside-array-bounds-gcc-12.patch \
+	file://use-address-of-operator-on-section-symbols-gcc-12.patch \
+	file://fix-build-with-binutils-2.41.patch \
 	"
 
 COMPATIBLE_MACHINE = "spycat|spycatmini|spycatminiplus|spycat4kmini"
